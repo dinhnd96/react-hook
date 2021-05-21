@@ -2,18 +2,17 @@ import React, { useState } from "react";
 
 const StatelessComponent = () => {
   const [value, setValue] = useState("");
-  const [todos, setTodos] = useState([]);
-
+  const [todos, setTodo] = useState([]);
   const addTodo = (e) => {
     e.preventDefault();
-    const newTodos = [...todos, { value }];
-    setTodos(newTodos);
+    const newTodo = [...todos, { value }];
+    setTodo(newTodo);
     setValue("");
   };
   const deleteTodo = (index) => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
+    const newTodo = [...todos];
+    newTodo.splice(index, 1);
+    setTodo(newTodo);
   };
   return (
     <div>
@@ -28,7 +27,7 @@ const StatelessComponent = () => {
       <div>
         {todos.map((todo, index) => (
           <div key={index} onClick={(index) => deleteTodo(index)}>
-            <h1>{todo.value}</h1>
+            <li>{todo.value}</li>
           </div>
         ))}
       </div>

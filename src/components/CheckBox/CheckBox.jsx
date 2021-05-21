@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 function CheckBox() {
   const [checked, setChecked] = useState(false);
   const [value, setValue] = useState("");
@@ -13,6 +13,10 @@ function CheckBox() {
       message: ${message}`
     );
     e.preventDefault();
+    setChecked("");
+    setValue("");
+    setOption("");
+    setMessage("");
   };
 
   return (

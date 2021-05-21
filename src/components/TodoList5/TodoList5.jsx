@@ -10,7 +10,6 @@ function TodoList5() {
   };
   const handleChange = (e) => {
     alert(e.target.value);
-    setValue("");
   };
   return (
     <div>
